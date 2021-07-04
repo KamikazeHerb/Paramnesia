@@ -24,7 +24,7 @@ public class BehaviourTree : MonoBehaviour
 
         var AlertNearbyGuards = new ActionNode<GuardContext>((timeTick, ctx) =>
         {
-            ctx.AlertAllGuards(10, ctx.transform.position, ctx.getSearchWaypoint());
+            ctx.AlertAllGuards(10, ctx.transform.position, ctx.GetSearchWaypoint());
             return AivoTreeStatus.Success;
         });
 
@@ -71,7 +71,7 @@ public class BehaviourTree : MonoBehaviour
 
         var MoveToSearchWaypoint = new ActionNode<GuardContext>((timeTick, ctx) =>
         {
-            return ctx.MoveToTarget(ctx.getSearchWaypoint());
+            return ctx.MoveToTarget(ctx.GetSearchWaypoint());
         });
 
         

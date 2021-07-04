@@ -48,72 +48,12 @@ public class GuardContext : MonoBehaviour
     public void Start()
     {
         //Field initialisation
-        searchWaypoint = Vector3.zero;
-        walkingSpeed = 0.5f;
-        turnSpeed = 1f;
-        agent = guardObject.GetComponent<NavMeshAgent>();
-        character = guardObject.GetComponent<ThirdPersonCharacter>();
-        spotLight = guardObject.GetComponentInChildren<Light>();
-        guards = GameObject.FindGameObjectsWithTag("Guard");
-        player = GameObject.FindGameObjectWithTag("Player");
-        agent.updatePosition = true;
-        agent.updateRotation = false;
-        targetWaypointIndex = 0;
-        alerted = false;
-        reachedTarget = false;
-        currentPath = new NavMeshPath();
-        agent.CalculatePath(transform.position, currentPath);
-        searchDirection = Vector3.zero;
-
-        //Patrol path setup
-        waypoints = new Vector3[pathHolder.childCount];
-        if (waypoints.Length > 1)
-        {
-            targetWaypoint = waypoints[targetWaypointIndex];
-            transform.LookAt(targetWaypoint);
-        }
-        //Sets the locations of each waypoint using pathHolder object
-        for (int i = 0; i < waypoints.Length; i++)
-        {
-            waypoints[i] = pathHolder.GetChild(i).position;
-            waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
-        }
-
-        switch (guardClass)
-        {
-            case GuardClass.CHASER:
-                walkingSpeed = 0.5f;
-                searchSpeed = 1f;
-                chaseSpeed = 1f;
-                searchRadius = 10f;
-                spotLight.color = Color.red;
-                break;
-            case GuardClass.LEADER:
-                walkingSpeed = 0.5f;
-                searchSpeed = 0.5f;
-                chaseSpeed = 0.8f;
-                searchRadius = 7f;
-                spotLight.color = Color.blue;
-                break;
-            case GuardClass.INFORMER:
-                walkingSpeed = 0.5f;
-                searchSpeed = 0.8f;
-                chaseSpeed = 0.8f;
-                searchRadius = 7f;
-                spotLight.color = Color.yellow;
-                break;
-            case GuardClass.SNEAKY:
-                walkingSpeed = 0.5f;
-                searchSpeed = 0.5f;
-                chaseSpeed = 0.8f;
-                searchRadius = 10f;
-                spotLight.color = Color.green;
-                break;
-        }
+        InitialiseFields();
+        InitialisePatrolPaths();
     }
 
     //Getter methods
-    public Vector3 getSearchWaypoint()
+    public Vector3 GetSearchWaypoint()
     {
         return searchWaypoint;
     }
@@ -149,27 +89,27 @@ public class GuardContext : MonoBehaviour
     }
     public AivoTreeStatus IsPlayerVisible()
     {
-        Vector3 lookTarget = player.transform.position;
+        var lookTarget = player.transform.position;
         lookTarget.y = transform.position.y;
-        Vector3 rayTarget = new Vector3(player.transform.position.x, player.gameObject.GetComponent<Collider>().bounds.max.y, player.transform.position.z);
-        Vector3 rayOrigin = guardObject.transform.position;
+        var rayTarget = new Vector3(player.transform.position.x, player.gameObject.GetComponent<Collider>().bounds.max.y, player.transform.position.z);
+        var rayOrigin = guardObject.transform.position;
         directionToPlayer = (rayTarget - rayOrigin).normalized;
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        angleToPlayer = Vector3.Angle(new Vector3(directionToPlayer.x, 0, directionToPlayer.z), this.transform.forward);
+        angleToPlayer = Vector3.Angle(new Vector3(directionToPlayer.x, 0, directionToPlayer.z), transform.forward);
 
         //Draw debug rays to show guard's field of view
         var direction = Quaternion.AngleAxis(FOVAngle, transform.up) * (transform.forward * 5);
         Debug.DrawRay(this.gameObject.transform.position, direction, Color.blue);
         var direction2 = Quaternion.AngleAxis(-FOVAngle, transform.up) * (transform.forward * 5);
         Debug.DrawRay(this.gameObject.transform.position, direction2, Color.blue);
-        //Debug.Log(angleToPlayer.ToString() + " : " + distanceToPlayer.ToString());
 
         //If player is within guard's field of view
-        if (Vector3.Distance(player.transform.position, this.transform.position) < 40 && angleToPlayer < FOVAngle)
+        if (Vector3.Distance(player.transform.position, transform.position) < 40 && angleToPlayer < FOVAngle)
         {
             //Ray cast to player to see if line of sight is obstructed
             if (!Physics.Linecast(rayOrigin, rayTarget, objectMask))
             {
+                //Player can be seen, set guard status to alerted and persue player
                 float dis = Vector3.Distance(rayOrigin, rayTarget);
                 playerVisible = true;
                 alerted = true;
@@ -177,7 +117,6 @@ public class GuardContext : MonoBehaviour
                 searchWaypoint = lastPlayerSighting;
                 reachedTarget = false;
                 Debug.DrawLine(rayOrigin, rayTarget);
-                //Debug.Log(rayOrigin.ToString());
                 return AivoTreeStatus.Success;
             }
             else
@@ -208,7 +147,7 @@ public class GuardContext : MonoBehaviour
         {
             agent.speed = walkingSpeed;
         }
-        if (Vector3.Distance(this.transform.position, Target) > 1)
+        if (Vector3.Distance(transform.position, Target) > 1)
         {
             agent.CalculatePath(Target, currentPath);
             if (currentPath.status == NavMeshPathStatus.PathComplete)
@@ -248,7 +187,7 @@ public class GuardContext : MonoBehaviour
 
             //Find a random location within a given radius of a given position, and if it is a 
             //valid walkable location on the navmesh then set it as the search waypoint
-            Vector3 searchLocation = UnityEngine.Random.insideUnitSphere * radius;
+            var searchLocation = UnityEngine.Random.insideUnitSphere * radius;
             searchLocation += location;
             if (NavMesh.SamplePosition(searchLocation, out NavMeshHit hit, radius, 1))
             {
@@ -274,8 +213,7 @@ public class GuardContext : MonoBehaviour
     public AivoTreeStatus FindNearestLeader()
     {
         int leadersFound = 0;
-        List<GameObject> leaders = new List<GameObject>();
-        Vector3 targetLeaderPosition = Vector3.zero;
+        var leaders = new List<GameObject>();
 
         //Find leader guards and add them to a list
         foreach (GameObject guard in guards)
@@ -290,7 +228,7 @@ public class GuardContext : MonoBehaviour
         //If there is more than 1 leader, find closest leader
         if (leadersFound > 1)
         {
-            float[] distances = new float[leadersFound];
+            var distances = new float[leadersFound];
             for (int i = 0; i < leadersFound; i++)
             {
                 distances[i] = Vector3.Distance(transform.position, leaders[i].transform.position);
@@ -336,6 +274,7 @@ public class GuardContext : MonoBehaviour
         }
     }
 
+    //Alerts all guards within a specified radius of a specified position to the player's location
     public AivoTreeStatus AlertAllGuards(float radius, Vector3 center, Vector3 playerPosition)
     {
         guards = GameObject.FindGameObjectsWithTag("Guard");
@@ -371,4 +310,72 @@ public class GuardContext : MonoBehaviour
         }
     }
 
+    public void InitialiseFields()
+    {
+        searchWaypoint = Vector3.zero;
+        walkingSpeed = 0.5f;
+        turnSpeed = 1f;
+        agent = guardObject.GetComponent<NavMeshAgent>();
+        character = guardObject.GetComponent<ThirdPersonCharacter>();
+        spotLight = guardObject.GetComponentInChildren<Light>();
+        guards = GameObject.FindGameObjectsWithTag("Guard");
+        player = GameObject.FindGameObjectWithTag("Player");
+        agent.updatePosition = true;
+        agent.updateRotation = false;
+        targetWaypointIndex = 0;
+        alerted = false;
+        reachedTarget = false;
+        currentPath = new NavMeshPath();
+        agent.CalculatePath(transform.position, currentPath);
+        searchDirection = Vector3.zero;
+
+        switch (guardClass)
+        {
+            case GuardClass.CHASER:
+                walkingSpeed = 0.5f;
+                searchSpeed = 1f;
+                chaseSpeed = 1f;
+                searchRadius = 10f;
+                spotLight.color = Color.red;
+                break;
+            case GuardClass.LEADER:
+                walkingSpeed = 0.5f;
+                searchSpeed = 0.5f;
+                chaseSpeed = 0.8f;
+                searchRadius = 7f;
+                spotLight.color = Color.blue;
+                break;
+            case GuardClass.INFORMER:
+                walkingSpeed = 0.5f;
+                searchSpeed = 0.8f;
+                chaseSpeed = 0.8f;
+                searchRadius = 7f;
+                spotLight.color = Color.yellow;
+                break;
+            case GuardClass.SNEAKY:
+                walkingSpeed = 0.5f;
+                searchSpeed = 0.5f;
+                chaseSpeed = 0.8f;
+                searchRadius = 10f;
+                spotLight.color = Color.green;
+                break;
+        }
+    }
+
+    public void InitialisePatrolPaths()
+    {
+        //Patrol path setup
+        waypoints = new Vector3[pathHolder.childCount];
+        if (waypoints.Length > 1)
+        {
+            targetWaypoint = waypoints[targetWaypointIndex];
+            transform.LookAt(targetWaypoint);
+        }
+        //Sets the locations of each waypoint using pathHolder object
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            waypoints[i] = pathHolder.GetChild(i).position;
+            waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
+        }
+    }
 }
