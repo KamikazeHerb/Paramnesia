@@ -134,6 +134,10 @@ public class GuardContext : MonoBehaviour
 
     public AivoTreeStatus MoveToTarget(Vector3 Target)
     {
+        if(waypoints.Count() <= 1)
+        {
+            Debug.Log(agent.velocity.magnitude.ToString());
+        }
 
         if (alerted && playerVisible)
         {
@@ -334,28 +338,28 @@ public class GuardContext : MonoBehaviour
             case GuardClass.CHASER:
                 walkingSpeed = 0.5f;
                 searchSpeed = 1f;
-                chaseSpeed = 1f;
+                chaseSpeed = 0.85f;
                 searchRadius = 10f;
                 spotLight.color = Color.red;
                 break;
             case GuardClass.LEADER:
                 walkingSpeed = 0.5f;
                 searchSpeed = 0.5f;
-                chaseSpeed = 0.8f;
+                chaseSpeed = 0.75f;
                 searchRadius = 7f;
                 spotLight.color = Color.blue;
                 break;
             case GuardClass.INFORMER:
                 walkingSpeed = 0.5f;
                 searchSpeed = 0.8f;
-                chaseSpeed = 0.8f;
+                chaseSpeed = 0.75f;
                 searchRadius = 7f;
                 spotLight.color = Color.yellow;
                 break;
             case GuardClass.SNEAKY:
                 walkingSpeed = 0.5f;
                 searchSpeed = 0.5f;
-                chaseSpeed = 0.8f;
+                chaseSpeed = 0.75f;
                 searchRadius = 10f;
                 spotLight.color = Color.green;
                 break;
