@@ -108,7 +108,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
--define:ENABLE_LEGACY_INPUT_MANAGER
+-define:ENABLE_INPUT_SYSTEM
 -define:MOBILE_INPUT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -321,6 +321,7 @@
 -r:"Library/Bee/artifacts/2100b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/Unity.Analytics.DataPrivacy.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -366,6 +367,7 @@
 "Assets/My Stuff/Scripts/AISight.cs"
 "Assets/My Stuff/Scripts/BehaviourTree.cs"
 "Assets/My Stuff/Scripts/CharacterAudio.cs"
+"Assets/My Stuff/Scripts/Controls.cs"
 "Assets/My Stuff/Scripts/CrouchIcon.cs"
 "Assets/My Stuff/Scripts/FPCamera.cs"
 "Assets/My Stuff/Scripts/GameMusic.cs"

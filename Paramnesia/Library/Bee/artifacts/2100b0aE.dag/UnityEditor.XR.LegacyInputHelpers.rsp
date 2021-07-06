@@ -108,8 +108,9 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
--define:ENABLE_LEGACY_INPUT_MANAGER
+-define:ENABLE_INPUT_SYSTEM
 -define:MOBILE_INPUT
+-define:ISX_PRESENT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll"
@@ -322,6 +323,7 @@
 -r:"C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/unityplastic.dll"
 -r:"C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
 -r:"C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
+-r:"Library/Bee/artifacts/2100b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/UnityEditor.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2100b0aE.dag/UnityEngine.SpatialTracking.ref.dll"

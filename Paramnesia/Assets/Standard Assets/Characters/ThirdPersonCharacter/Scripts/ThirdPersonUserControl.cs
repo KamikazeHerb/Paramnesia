@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -12,9 +13,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         public Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
+        private InputAction left;
+        private InputAction right;
+        private InputAction up;
+        private InputAction down;
 
         private void Start()
         {
+            //Configure input action
+            left = new InputAction( type: InputActionType.Button, binding: "<keyboard>/a", interactions: "");
+            right = new InputAction(type: InputActionType.Button, binding: "<keyboard>/d", interactions: "");
+            up = new InputAction(type: InputActionType.Button, binding: "<keyboard>/w", interactions: "");
+            down = new InputAction(type: InputActionType.Button, binding: "<keyboard>/s", interactions: "");
+
+            left.Enable();
+            right.Enable();
+            up.Enable();
+            down.Enable();
+
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -39,10 +55,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
                 m_Jump = false;
             }
-            if (!Input.GetMouseButton(0))
-            {
-                Vector3.ClampMagnitude(m_Move, 0.49f);
-            }
+            //if (!Input.GetMouseButton(0))
+            //{
+            //    Vector3.ClampMagnitude(m_Move, 0.49f);
+            //}
             else
             {
                m_Move = Vector3.ClampMagnitude(m_Move, 1.2f);
@@ -54,13 +70,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void FixedUpdate()
         {
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
-            bool crouch = Input.GetMouseButton(1);
+            float v = up.ReadValue<float>() - down.ReadValue<float>();
+            float h = right.ReadValue<float>() - left.ReadValue<float>();
 
             // calculate move direction to pass to character
             if (m_Cam != null)
             {
+                
                 // calculate camera relative direction to move:
                 m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
                 m_Move = v*m_CamForward + h*m_Cam.right;
@@ -80,16 +96,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
 #endif
-            if (!Input.GetMouseButton(0))
-            {
-                Vector3.ClampMagnitude(m_Move, 0.49f);
-            }
-            else
-            {
-                Vector3.ClampMagnitude(m_Move, 1.2f);
-            }
+            //if (!Input.GetMouseButton(0))
+            //{
+            //    Vector3.ClampMagnitude(m_Move, 0.49f);
+            //}
+            //else
+            //{
+            //    Vector3.ClampMagnitude(m_Move, 1.2f);
+            //}
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump);
+            m_Character.Move(m_Move, false, m_Jump);
             m_Jump = false;
         }
     }

@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
 using UnityEngine;
-using UnityStandardAssets.Characters.ThirdPerson;
-
 
 /*
  * Class to handle playing sound effects using animations
@@ -20,7 +17,7 @@ public class CharacterAudio : MonoBehaviour
     {
         guards = GameObject.FindGameObjectsWithTag("Guard");
         footstep = GetComponent<AudioSource>();
-        if (this.gameObject.tag == "Player")
+        if (gameObject.CompareTag("Player"))
         {
             loudStepVolume = 0.005f;
             quietStepVolume = 0.0025f;
@@ -37,52 +34,31 @@ public class CharacterAudio : MonoBehaviour
     public void LoudStep()
     {
         //If player is running, alert guards within 5 meters of player
-        if (this.gameObject.tag == "Player" && Input.GetMouseButton(0))
+        if (gameObject.CompareTag("Player") && Input.GetMouseButton(0))
         {
-            foreach (GameObject guard in guards)
+            foreach (GameObject guard in guards.Where(g => Vector3.Distance(g.transform.position, gameObject.transform.position) < 5 && !g.GetComponent<GuardContext>().alerted))
             {
-                //Used to switch beteen Finite State Machine and Behaviour tree modes
-                if (false)
-                {
-                    if (Vector3.Distance(guard.transform.position, this.gameObject.transform.position) < 5 && !guard.GetComponent<GuardFSM>().alerted)
-                    {
-                        guard.GetComponent<GuardFSM>().alerted = true;
-                        guard.GetComponent<GuardFSM>().currentState = GuardFSM.State.SEARCHING;
-                        guard.GetComponent<GuardFSM>().reachedTarget = false;
-                        guard.GetComponent<AISight>().lastPlayerSighting = GameObject.FindGameObjectWithTag("Player").transform.position;
-                    }
-                }
-                else
-                {
-                    if (Vector3.Distance(guard.transform.position, this.gameObject.transform.position) < 5 && !guard.GetComponent<GuardContext>().alerted)
-                    {
-                        guard.GetComponent<GuardContext>().alerted = true;
-                        guard.GetComponent<GuardContext>().lastPlayerSighting = GameObject.FindGameObjectWithTag("Player").transform.position;
-                        guard.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);
-                        guard.GetComponent<GuardContext>().SetSearchWaypoint(GameObject.FindGameObjectWithTag("Player").transform.position);
-                    }
-                    
-                }
+                guard.GetComponent<GuardContext>().alerted = true;
+                guard.GetComponent<GuardContext>().lastPlayerSighting = GameObject.FindGameObjectWithTag("Player").transform.position;
+                guard.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);
+                guard.GetComponent<GuardContext>().SetSearchWaypoint(GameObject.FindGameObjectWithTag("Player").transform.position);
                 
             }
         }
         footstep.volume = loudStepVolume;
         footstep.Play();
-        //footstep.PlayOneShot(footstep.clip);
     }
 
     public void QuietStep()
     {
         footstep.volume = quietStepVolume;
         footstep.Play();
-        //footstep.PlayOneShot(footstep.clip);
     }
 
     public void CrouchStep()
     {
         footstep.volume = crouchStepVolume;
         footstep.Play();
-        //footstep.PlayOneShot(footstep.clip);
     }
 
 }
