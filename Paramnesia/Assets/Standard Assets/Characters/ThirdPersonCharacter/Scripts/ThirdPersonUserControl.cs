@@ -13,23 +13,35 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         public Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-        private InputAction left;
-        private InputAction right;
-        private InputAction up;
-        private InputAction down;
+        private InputAction moveLeft;
+        private InputAction moveRight;
+        private InputAction moveForward;
+        private InputAction moveBack;
+        private InputAction crouch;
+        private InputAction sprint;
+        private InputAction jump;
+        
 
         private void Start()
         {
-            //Configure input action
-            left = new InputAction( type: InputActionType.Button, binding: "<keyboard>/a", interactions: "");
-            right = new InputAction(type: InputActionType.Button, binding: "<keyboard>/d", interactions: "");
-            up = new InputAction(type: InputActionType.Button, binding: "<keyboard>/w", interactions: "");
-            down = new InputAction(type: InputActionType.Button, binding: "<keyboard>/s", interactions: "");
+            Screen.brightness = 1;
 
-            left.Enable();
-            right.Enable();
-            up.Enable();
-            down.Enable();
+            //Configure input action
+            moveLeft = new InputAction( type: InputActionType.Button, binding: "<keyboard>/a", interactions: "");
+            moveRight = new InputAction(type: InputActionType.Button, binding: "<keyboard>/d", interactions: "");
+            moveForward = new InputAction(type: InputActionType.Button, binding: "<keyboard>/w", interactions: "");
+            moveBack = new InputAction(type: InputActionType.Button, binding: "<keyboard>/s", interactions: "");
+            crouch = new InputAction(type: InputActionType.Button, binding: "<Mouse>/rightButton", interactions: "");
+            sprint = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton", interactions: "");
+            jump = new InputAction(type: InputActionType.Button, binding: "<keyboard>/space", interactions: "");
+
+            moveLeft.Enable();
+            moveRight.Enable();
+            moveForward.Enable();
+            moveBack.Enable();
+            crouch.Enable();
+            sprint.Enable();
+            jump.Enable();
 
             // get the transform of the main camera
             if (Camera.main != null)
@@ -50,15 +62,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+            Debug.Log(sprint.ReadValue<float>().ToString());
             if (!m_Jump)
             {
-                //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-                m_Jump = false;
+                m_Jump = jump.ReadValue<float>() > 0;
             }
-            //if (!Input.GetMouseButton(0))
-            //{
-            //    Vector3.ClampMagnitude(m_Move, 0.49f);
-            //}
+            if (sprint.ReadValue<float>() == 0)
+            {
+                Vector3.ClampMagnitude(m_Move, 0.49f);
+            }
             else
             {
                m_Move = Vector3.ClampMagnitude(m_Move, 1.2f);
@@ -69,9 +81,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            Debug.Log(sprint.ReadValue<float>().ToString());
             // read inputs
-            float v = up.ReadValue<float>() - down.ReadValue<float>();
-            float h = right.ReadValue<float>() - left.ReadValue<float>();
+            float v = moveForward.ReadValue<float>() - moveBack.ReadValue<float>();
+            float h = moveRight.ReadValue<float>() - moveLeft.ReadValue<float>();
 
             // calculate move direction to pass to character
             if (m_Cam != null)
@@ -87,25 +100,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 m_Move = v*Vector3.forward + h*Vector3.right;
             }
             m_Move.Normalize();
-#if !MOBILE_INPUT
             // walk speed multiplier
-            if (!Input.GetMouseButton(0) && !m_Character.m_Crouching)
+            if (sprint.ReadValue<float>() == 0 && !m_Character.m_Crouching)
             {
                 m_Move *= 0.5f;
                 Vector3.ClampMagnitude(m_Move, 0.49f);
             }
 
-#endif
-            //if (!Input.GetMouseButton(0))
-            //{
-            //    Vector3.ClampMagnitude(m_Move, 0.49f);
-            //}
-            //else
-            //{
-            //    Vector3.ClampMagnitude(m_Move, 1.2f);
-            //}
+            if (sprint.ReadValue<float>() == 0)
+            {
+                Vector3.ClampMagnitude(m_Move, 0.49f);
+            }
+            else
+            {
+                Vector3.ClampMagnitude(m_Move, 1.2f);
+            }
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, false, m_Jump);
+            m_Character.Move(m_Move, crouch.ReadValue<float>() == 1, m_Jump);
             m_Jump = false;
         }
     }

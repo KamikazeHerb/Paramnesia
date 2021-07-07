@@ -134,10 +134,6 @@ public class GuardContext : MonoBehaviour
 
     public AivoTreeStatus MoveToTarget(Vector3 Target)
     {
-        if(waypoints.Count() <= 1)
-        {
-            Debug.Log(agent.velocity.magnitude.ToString());
-        }
 
         if (alerted && playerVisible)
         {

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /*
  * Class to handle playing sound effects using animations
@@ -12,9 +13,12 @@ public class CharacterAudio : MonoBehaviour
     private float loudStepVolume;
     private float quietStepVolume;
     private float crouchStepVolume;
+    private InputAction sprint;
 
     void Start()
     {
+        sprint = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton", interactions: "");
+        sprint.Enable();
         guards = GameObject.FindGameObjectsWithTag("Guard");
         footstep = GetComponent<AudioSource>();
         if (gameObject.CompareTag("Player"))
@@ -34,7 +38,7 @@ public class CharacterAudio : MonoBehaviour
     public void LoudStep()
     {
         //If player is running, alert guards within 5 meters of player
-        if (gameObject.CompareTag("Player") && Input.GetMouseButton(0))
+        if (gameObject.CompareTag("Player") && sprint.ReadValue<float>() == 1)
         {
             foreach (GameObject guard in guards.Where(g => Vector3.Distance(g.transform.position, gameObject.transform.position) < 5 && !g.GetComponent<GuardContext>().alerted))
             {
