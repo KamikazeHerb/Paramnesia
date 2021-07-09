@@ -62,7 +62,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
-            Debug.Log(sprint.ReadValue<float>().ToString());
             if (!m_Jump)
             {
                 m_Jump = jump.ReadValue<float>() > 0;
@@ -81,7 +80,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
-            Debug.Log(sprint.ReadValue<float>().ToString());
             // read inputs
             float v = moveForward.ReadValue<float>() - moveBack.ReadValue<float>();
             float h = moveRight.ReadValue<float>() - moveLeft.ReadValue<float>();

@@ -36,7 +36,6 @@ public class BehaviourTree : MonoBehaviour
 
         var moveToPlayer = new ActionNode<GuardContext>((timeTick, ctx) =>
         {
-            //Debug.Log(ctx.guardClass.ToString() + "Chasing Player at: " + ctx.player.transform.position.ToString());
             return ctx.MoveToTarget(ctx.player.transform.position);
         });
 
@@ -157,7 +156,7 @@ public class BehaviourTree : MonoBehaviour
 
         var LeaderPursue = new SequenceNode<GuardContext>(IsLeader, isPlayerVisible, AlertNearbyGuards, moveToPlayer);
 
-        var Pursue = new SelectorNode<GuardContext>(LeaderPursue, StandardPursue);
+        var Pursue = new SelectorNode<GuardContext>(LeaderPursue, StandardPursue, isPlayerVisible);
 
         var ChaserSearch = new SequenceNode<GuardContext>(IsChaser, SearchWaypoint, MoveToSearchWaypoint);
 

@@ -87,6 +87,8 @@ public class GuardContext : MonoBehaviour
     {
         searchWaypoint = waypoint;
     }
+
+    //Behaviour Tree Action Nodes
     public AivoTreeStatus IsPlayerVisible()
     {
         var lookTarget = player.transform.position;
@@ -97,11 +99,11 @@ public class GuardContext : MonoBehaviour
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         angleToPlayer = Vector3.Angle(new Vector3(directionToPlayer.x, 0, directionToPlayer.z), transform.forward);
 
-        //Draw debug rays to show guard's field of view
+        //Draw debug rays to show guard's field of view in editor
         var direction = Quaternion.AngleAxis(FOVAngle, transform.up) * (transform.forward * 5);
-        Debug.DrawRay(this.gameObject.transform.position, direction, Color.blue);
+        Debug.DrawRay(gameObject.transform.position, direction, Color.blue);
         var direction2 = Quaternion.AngleAxis(-FOVAngle, transform.up) * (transform.forward * 5);
-        Debug.DrawRay(this.gameObject.transform.position, direction2, Color.blue);
+        Debug.DrawRay(gameObject.transform.position, direction2, Color.blue);
 
         //If player is within guard's field of view
         if (Vector3.Distance(player.transform.position, transform.position) < 40 && angleToPlayer < FOVAngle)
@@ -109,13 +111,27 @@ public class GuardContext : MonoBehaviour
             //Ray cast to player to see if line of sight is obstructed
             if (!Physics.Linecast(rayOrigin, rayTarget, objectMask))
             {
-                //Player can be seen, set guard status to alerted and persue player
-                float dis = Vector3.Distance(rayOrigin, rayTarget);
+                //Player can be seen, set guard status to alerted
                 playerVisible = true;
                 alerted = true;
                 lastPlayerSighting = player.transform.position;
-                searchWaypoint = lastPlayerSighting;
-                reachedTarget = false;
+                var path = new NavMeshPath();
+                agent.CalculatePath(player.transform.position, path);
+                if (path.status == NavMeshPathStatus.PathComplete)
+                {
+                    //Player can be reached, set as destination
+                    searchWaypoint = lastPlayerSighting;
+                    reachedTarget = false;
+                }
+                else
+                {
+                    //Player can be seen but not reached, stop and look at player
+                    StopMoving();
+                    Vector3 lookPos = player.transform.position - transform.position;
+                    lookPos.y = 0;
+                    Quaternion rotation = Quaternion.LookRotation(lookPos);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.5f);
+                }
                 Debug.DrawLine(rayOrigin, rayTarget);
                 return AivoTreeStatus.Success;
             }
@@ -170,21 +186,15 @@ public class GuardContext : MonoBehaviour
 
     public AivoTreeStatus DetermineSearchWaypoint(Vector3 location, float radius)
     {
-        //If waypoint not yeat reached, leave waypoint as it is and return success
-        if (Vector3.Distance(transform.position, searchWaypoint) > 1)
+        //If current waypoint is valid but not yet reached, leave waypoint as it is and return success, otherwise generate new waypoint
+        if (Vector3.Distance(transform.position, searchWaypoint) > 1 && currentPath.status == NavMeshPathStatus.PathComplete)
         {
             Debug.DrawLine(transform.position, searchWaypoint, Color.white, 0.01f, false);
             return AivoTreeStatus.Success;
         }
         else
         {
-            //Stop character moving
-            reachedTarget = true;
-            agent.isStopped = true;
-            agent.ResetPath();
-            agent.velocity = Vector3.zero;
-            character.Move(Vector3.zero, false, false);
-
+            StopMoving();
             //Find a random location within a given radius of a given position, and if it is a 
             //valid walkable location on the navmesh then set it as the search waypoint
             var searchLocation = UnityEngine.Random.insideUnitSphere * radius;
@@ -194,7 +204,6 @@ public class GuardContext : MonoBehaviour
                 agent.CalculatePath(hit.position, currentPath);
                 if (currentPath.status == NavMeshPathStatus.PathComplete)
                 {
-                    
                     searchWaypoint = hit.position;
                     return AivoTreeStatus.Success;
                 }
@@ -377,5 +386,15 @@ public class GuardContext : MonoBehaviour
             waypoints[i] = pathHolder.GetChild(i).position;
             waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
         }
+    }
+
+    public void StopMoving()
+    {
+        //Stop character moving
+        reachedTarget = true;
+        agent.isStopped = true;
+        agent.ResetPath();
+        agent.velocity = Vector3.zero;
+        character.Move(Vector3.zero, false, false);
     }
 }
