@@ -59,14 +59,6 @@ public class FPCamera : MonoBehaviour
 
     void LateUpdate()
     {
-
-       //Allow camera zooming with scroll wheel
-        //dstFromTarget -= Input.GetAxis("Mouse ScrollWheel") * 2f;
-        //if (dstFromTarget > 2)
-        //    dstFromTarget = 2;
-        //if (dstFromTarget < 0)
-        //    dstFromTarget = 0;
-
         //Handles camera angle rotation independently of position
         yaw += lookRight.ReadValue<float>() * mouseSensitivity;
         pitch -= lookUp.ReadValue<float>() * mouseSensitivity;

@@ -23,9 +23,9 @@ public class CharacterAudio : MonoBehaviour
         footstep = GetComponent<AudioSource>();
         if (gameObject.CompareTag("Player"))
         {
-            loudStepVolume = 0.005f;
-            quietStepVolume = 0.0025f;
-            crouchStepVolume = 0.0015f;
+            loudStepVolume = 0.025f;
+            quietStepVolume = 0.0125f;
+            crouchStepVolume = 0.0075f;
         }
         else
         {
