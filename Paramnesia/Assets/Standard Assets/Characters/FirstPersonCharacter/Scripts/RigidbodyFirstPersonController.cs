@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -8,6 +9,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
+        private InputAction moveLeft;
+        private InputAction moveRight;
+        private InputAction moveForward;
+        private InputAction moveBack;
+        private InputAction crouch;
+        private InputAction sprint;
+        private InputAction jump;
+
         [Serializable]
         public class MovementSettings
         {
@@ -123,6 +132,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
+
+            //Configure input action
+            moveLeft = new InputAction(type: InputActionType.Button, binding: "<keyboard>/a", interactions: "");
+            moveRight = new InputAction(type: InputActionType.Button, binding: "<keyboard>/d", interactions: "");
+            moveForward = new InputAction(type: InputActionType.Button, binding: "<keyboard>/w", interactions: "");
+            moveBack = new InputAction(type: InputActionType.Button, binding: "<keyboard>/s", interactions: "");
+            crouch = new InputAction(type: InputActionType.Button, binding: "<Mouse>/rightButton", interactions: "");
+            sprint = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton", interactions: "");
+            jump = new InputAction(type: InputActionType.Button, binding: "<keyboard>/space", interactions: "");
+
+            moveLeft.Enable();
+            moveRight.Enable();
+            moveForward.Enable();
+            moveBack.Enable();
+            crouch.Enable();
+            sprint.Enable();
+            jump.Enable();
         }
 
 
@@ -130,7 +156,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+            if (jump.ReadValue<float>() > 0 && !m_Jump)
             {
                 m_Jump = true;
             }
@@ -148,9 +174,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
-                desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
-                desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
-                desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
+                desiredMove.x *= movementSettings.CurrentTargetSpeed;
+                desiredMove.z *= movementSettings.CurrentTargetSpeed;
+                desiredMove.y *= movementSettings.CurrentTargetSpeed;
                 if (m_RigidBody.velocity.sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
                 {
@@ -196,9 +222,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void StickToGroundHelper()
         {
-            RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height/2f) - m_Capsule.radius) +
+            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out RaycastHit hitInfo,
+                                   ((m_Capsule.height / 2f) - m_Capsule.radius) +
                                    advancedSettings.stickToGroundHelperDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
@@ -213,10 +238,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             
             Vector2 input = new Vector2
-                {
-                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
-                    y = CrossPlatformInputManager.GetAxis("Vertical")
-                };
+            {
+                x = moveRight.ReadValue<float>() - moveLeft.ReadValue<float>(),
+                y = moveForward.ReadValue<float>() - moveBack.ReadValue<float>()
+            };
+            Debug.Log(input.ToString());
 			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
         }
@@ -244,9 +270,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void GroundCheck()
         {
             m_PreviouslyGrounded = m_IsGrounded;
-            RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out RaycastHit hitInfo,
+                                   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;

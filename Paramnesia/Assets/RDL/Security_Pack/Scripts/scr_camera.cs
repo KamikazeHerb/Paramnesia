@@ -62,9 +62,9 @@ public class scr_camera : MonoBehaviour
             new Vector3(player.position.x, player.gameObject.GetComponent<Collider>().bounds.max.y, player.position.z));
         if (Vector3.Distance(player.position, swivel_camera.position) < 10 && angleToPlayer < FOVAngle)
         {
-            if (!Physics.Raycast(rayOrigin, (directionToPlayer * distanceToPlayer), out RaycastHit hit, distanceToPlayer, objectMask))
+            if (!Physics.Raycast(rayOrigin, directionToPlayer * distanceToPlayer, out RaycastHit hit, distanceToPlayer, objectMask))
             {
-                float dis = Vector3.Distance(rayOrigin, rayTarget);
+                _ = Vector3.Distance(rayOrigin, rayTarget);
                 //Player spotted, alert camera guard if he is not already alerted
                 PlayerVisible = true;
                 lastPlayerSighting = player.position;

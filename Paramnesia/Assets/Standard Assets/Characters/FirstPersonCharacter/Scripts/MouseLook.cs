@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -21,10 +22,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Quaternion m_CameraTargetRot;
         private bool m_cursorIsLocked = true;
 
+        private InputAction leftClick;
+        private InputAction esc;
+
+
         public void Init(Transform character, Transform camera)
         {
             m_CharacterTargetRot = character.localRotation;
             m_CameraTargetRot = camera.localRotation;
+
+            leftClick = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton", interactions: "");
+            esc = new InputAction(type: InputActionType.Button, binding: "<keyboard>/esc", interactions: "");
+
+            leftClick.Enable();
+            esc.Enable();
         }
 
 
@@ -74,11 +85,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void InternalLockUpdate()
         {
-            if(Input.GetKeyUp(KeyCode.Escape))
+            if(esc.ReadValue<float>() > 0)
             {
                 m_cursorIsLocked = false;
             }
-            else if(Input.GetMouseButtonUp(0))
+            else if(leftClick.ReadValue<float>() > 0)
             {
                 m_cursorIsLocked = true;
             }

@@ -24,7 +24,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Start()
         {
-            Screen.brightness = 1;
 
             //Configure input action
             moveLeft = new InputAction( type: InputActionType.Button, binding: "<keyboard>/a", interactions: "");

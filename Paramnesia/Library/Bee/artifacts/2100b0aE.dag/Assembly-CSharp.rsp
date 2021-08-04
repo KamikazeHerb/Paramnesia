@@ -369,6 +369,8 @@
 "Assets/My Stuff/Scripts/CharacterAudio.cs"
 "Assets/My Stuff/Scripts/Controls.cs"
 "Assets/My Stuff/Scripts/CrouchIcon.cs"
+"Assets/My Stuff/Scripts/FirstPersonCharacter.cs"
+"Assets/My Stuff/Scripts/FirstPersonUserControl.cs"
 "Assets/My Stuff/Scripts/FPCamera.cs"
 "Assets/My Stuff/Scripts/GameMusic.cs"
 "Assets/My Stuff/Scripts/GameObjective.cs"

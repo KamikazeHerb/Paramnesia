@@ -16,13 +16,5 @@ public class CrouchIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetComponent<ThirdPersonCharacter>().m_Crouching)
-        {
-            CrouchIconObject.SetActive(true);
-        }
-        else
-        {
-            CrouchIconObject.SetActive(false);
-        }
     }
 }
