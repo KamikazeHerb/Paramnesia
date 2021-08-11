@@ -20,9 +20,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [Serializable]
         public class MovementSettings
         {
-            public float ForwardSpeed = 8.0f;   // Speed when walking forward
-            public float BackwardSpeed = 4.0f;  // Speed when walking backwards
-            public float StrafeSpeed = 4.0f;    // Speed when walking sideways
+            public float ForwardSpeed = 1.0f;   // Speed when walking forward
+            public float BackwardSpeed = 1.0f;  // Speed when walking backwards
+            public float StrafeSpeed = 1.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
 	        public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
@@ -155,10 +155,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
             RotateView();
-
+            Debug.Log(m_RigidBody.velocity.ToString());
             if (jump.ReadValue<float>() > 0 && !m_Jump)
             {
                 m_Jump = true;
+            }
+            else
+            {
+                //Dampen velocity to max speed
+                if (m_RigidBody.velocity.magnitude > movementSettings.ForwardSpeed)
+                {
+                    //m_RigidBody.AddForce(m_RigidBody.mass * (-(m_RigidBody.velocity - (m_RigidBody.velocity.normalized * movementSettings.ForwardSpeed)) / Time.deltaTime), ForceMode.Impulse);
+                    Vector3.ClampMagnitude(m_RigidBody.velocity, 0.0001f);
+                }
             }
         }
 
@@ -167,7 +176,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             GroundCheck();
             Vector2 input = GetInput();
-
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
                 // always move along the camera forward as it is the direction that it being aimed at
@@ -180,7 +188,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (m_RigidBody.velocity.sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
                 {
-                    m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    m_RigidBody.AddForce(m_RigidBody.mass * (desiredMove/Time.deltaTime), ForceMode.Impulse);
+                    //m_RigidBody.velocity = desiredMove;
+                    //Debug.Log((m_RigidBody.mass * (desiredMove / Time.deltaTime)).ToString());
+                    //Debug.Log(m_Jump);
+                    //Debug.Log(m_GroundContactNormal.ToString());
+                    Debug.Log($"{m_RigidBody.velocity} // {desiredMove}");
+                    
+                }
+                if (m_RigidBody.velocity.magnitude > 2)
+                {
+
                 }
             }
 
@@ -191,7 +209,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (m_Jump)
                 {
                     m_RigidBody.drag = 0f;
-                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
+                    //m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
                     m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
                     m_Jumping = true;
                 }
@@ -200,6 +218,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.Sleep();
                 }
+                
             }
             else
             {
@@ -242,7 +261,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 x = moveRight.ReadValue<float>() - moveLeft.ReadValue<float>(),
                 y = moveForward.ReadValue<float>() - moveBack.ReadValue<float>()
             };
-            Debug.Log(input.ToString());
 			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
         }

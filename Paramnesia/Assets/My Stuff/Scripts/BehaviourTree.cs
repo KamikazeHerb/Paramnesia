@@ -185,7 +185,7 @@ public class BehaviourTree : MonoBehaviour
     public void Update()
     {
         bool chase = false;
-        var status = tree.Tick((long)Time.deltaTime, this.gameObject.GetComponent<GuardContext>());
+        var status = tree.Tick((long)Time.deltaTime, gameObject.GetComponent<GuardContext>());
         foreach (GameObject guard in guards)
         {
             //Reset level if player is caught

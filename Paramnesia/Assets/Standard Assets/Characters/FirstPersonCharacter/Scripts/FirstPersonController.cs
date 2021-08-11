@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -42,6 +43,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        private InputAction moveLeft;
+        private InputAction moveRight;
+        private InputAction moveForward;
+        private InputAction moveBack;
+        private InputAction crouch;
+        private InputAction sprint;
+        private InputAction jump;
+
         // Use this for initialization
         private void Start()
         {
@@ -55,6 +64,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            //Configure input action
+            moveLeft = new InputAction(type: InputActionType.Button, binding: "<keyboard>/a", interactions: "");
+            moveRight = new InputAction(type: InputActionType.Button, binding: "<keyboard>/d", interactions: "");
+            moveForward = new InputAction(type: InputActionType.Button, binding: "<keyboard>/w", interactions: "");
+            moveBack = new InputAction(type: InputActionType.Button, binding: "<keyboard>/s", interactions: "");
+            crouch = new InputAction(type: InputActionType.Button, binding: "<Mouse>/rightButton", interactions: "");
+            sprint = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton", interactions: "");
+            jump = new InputAction(type: InputActionType.Button, binding: "<keyboard>/space", interactions: "");
+
+            moveLeft.Enable();
+            moveRight.Enable();
+            moveForward.Enable();
+            moveBack.Enable();
+            crouch.Enable();
+            sprint.Enable();
+            jump.Enable();
         }
 
 
@@ -65,7 +91,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = jump.ReadValue<float>() > 0;
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -126,7 +152,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
-
+            Debug.Log(m_Input.ToString());
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
@@ -204,8 +230,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void GetInput(out float speed)
         {
             // Read input
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            float horizontal = moveRight.ReadValue<float>() - moveLeft.ReadValue<float>();
+            float vertical = moveForward.ReadValue<float>() - moveBack.ReadValue<float>();
 
             bool waswalking = m_IsWalking;
 
