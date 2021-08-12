@@ -104,12 +104,12 @@
     <Compile Include="Assets\RDL\Security_Pack\Scripts\scr_camera.cs" />
     <Compile Include="Assets\My Stuff\Scripts\FPCamera.cs" />
     <Compile Include="Assets\My Stuff\Scripts\BehaviourTree.cs" />
+    <Compile Include="Assets\My Stuff\Scripts\FirstPersonMovement.cs" />
     <Compile Include="Assets\Aivo Behaviour Tree\test\Example.cs" />
     <Compile Include="Assets\Fluent Behaviour Tree\IParentBehaviourTreeNode.cs" />
     <Compile Include="Assets\My Stuff\Scripts\GuardContext.cs" />
     <Compile Include="Assets\Aivo Behaviour Tree\src\TreeNode.cs" />
     <Compile Include="Assets\My Stuff\Scripts\GameMusic.cs" />
-    <Compile Include="Assets\My Stuff\Scripts\FirstPersonMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ProCore\ProBuilder\Shader\pb_ScrollHighlight.shader" />

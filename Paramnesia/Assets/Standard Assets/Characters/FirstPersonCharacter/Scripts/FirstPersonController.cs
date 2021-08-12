@@ -130,9 +130,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
                                m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
-
-            m_MoveDir.x = desiredMove.x*speed;
-            m_MoveDir.z = desiredMove.z*speed;
+            // calculate camera relative direction to move:
+            var m_CamForward = Vector3.Scale(m_Camera.transform.forward, new Vector3(1, 0, 1)).normalized;
+            m_MoveDir = desiredMove.z * speed * m_CamForward + desiredMove.x * speed * m_Camera.transform.right;
 
 
             if (m_CharacterController.isGrounded)

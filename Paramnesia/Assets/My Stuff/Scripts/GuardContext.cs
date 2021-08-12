@@ -170,7 +170,7 @@ public class GuardContext : MonoBehaviour
             {
                 agent.isStopped = false;
                 agent.SetPath(currentPath);
-                //character.Move(agent.desiredVelocity, false, false);
+                character.Move(agent.desiredVelocity, false, false);
                 return AivoTreeStatus.Success;
             }
             else
