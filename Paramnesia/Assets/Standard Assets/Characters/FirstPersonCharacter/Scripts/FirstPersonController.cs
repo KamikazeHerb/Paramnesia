@@ -14,6 +14,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
+        [SerializeField] private float m_CrouchSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -107,6 +108,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
         }
 
 
@@ -133,6 +135,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // calculate camera relative direction to move:
             var m_CamForward = Vector3.Scale(m_Camera.transform.forward, new Vector3(1, 0, 1)).normalized;
             m_MoveDir = desiredMove.z * speed * m_CamForward + desiredMove.x * speed * m_Camera.transform.right;
+            if (crouch.ReadValue<float>() > 0)
+            {
+                
+            }
 
 
             if (m_CharacterController.isGrounded)
@@ -152,7 +158,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
-            Debug.Log(m_Input.ToString());
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
@@ -232,7 +237,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = moveRight.ReadValue<float>() - moveLeft.ReadValue<float>();
             float vertical = moveForward.ReadValue<float>() - moveBack.ReadValue<float>();
-
+            m_IsWalking = sprint.ReadValue<float>() == 0;
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
@@ -241,7 +246,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            if (m_IsWalking == true)
+            {
+                if (crouch.ReadValue<float>() > 0)
+                {
+                    speed = m_CrouchSpeed;
+                }
+                else
+                {
+                    speed = m_WalkSpeed;
+                }
+            }
+            else
+            {
+                speed = m_RunSpeed;
+            }
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
