@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637636134364365006
-    m_Hash: 3703224200
+      ticks: 637649273692889622
+    m_Hash: 2531842846
   m_LockFileStatus:
     m_FilePath: C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637636134364415052
-    m_Hash: 992678453
+      ticks: 637649273692899631
+    m_Hash: 2618771111
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -372,6 +372,8 @@ m_ResolvedPackages:
     - 1.5.7
     - 1.6.0
     - 1.7.1
+    - 1.8.0
+    - 1.9.0
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -384,6 +386,8 @@ m_ResolvedPackages:
     - 2.1.0-preview.6
     compatible:
     - 1.7.1
+    - 1.8.0
+    - 1.9.0
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -1066,9 +1070,11 @@ m_ResolvedPackages:
     - 1.1.24
     - 1.1.26
     - 1.1.27
+    - 1.1.29
     compatible:
     - 1.1.27
-    verified: 1.1.27
+    - 1.1.29
+    verified: 1.1.29
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -1186,6 +1192,7 @@ m_ResolvedPackages:
     - 1.5.4
     - 1.5.5
     - 1.5.6
+    - 1.6.0-preview.1
     - 2.0.0
     - 2.0.1-preview.1
     - 2.0.1
@@ -1207,6 +1214,7 @@ m_ResolvedPackages:
     - 2.1.4
     - 2.1.5
     - 2.1.6
+    - 2.2.0-preview.1
     - 3.0.0-preview.1
     - 3.0.0-preview.3
     - 3.0.0-preview.4
@@ -1224,8 +1232,10 @@ m_ResolvedPackages:
     - 3.0.4
     - 3.0.5
     - 3.0.6
+    - 3.2.0-pre.1
     compatible:
     - 3.0.6
+    - 3.2.0-pre.1
     verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
@@ -1351,6 +1361,7 @@ m_ResolvedPackages:
     - 1.6.0-pre.4
     - 1.6.0-pre.5
     - 1.6.1
+    - 1.6.2
     compatible:
     - 1.5.6
     - 1.6.0-pre.1
@@ -1358,6 +1369,7 @@ m_ResolvedPackages:
     - 1.6.0-pre.4
     - 1.6.0-pre.5
     - 1.6.1
+    - 1.6.2
     verified: 1.5.6
   dependencies:
   - name: com.unity.modules.director
