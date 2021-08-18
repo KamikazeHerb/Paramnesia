@@ -12,6 +12,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
+        [SerializeField] private bool m_IsCrouching;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] private float m_CrouchSpeed;
@@ -39,8 +40,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
         private Vector3 m_OriginalCameraPosition;
+        private Vector3 m_CrouchCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
+        private float m_CrouchHeightSeparation = 1.1f;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
@@ -58,6 +61,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
+            m_CrouchCameraPosition = new Vector3(m_Camera.transform.localPosition.x, m_Camera.transform.localPosition.y - m_CrouchHeightSeparation, m_Camera.transform.localPosition.z);
             m_FovKick.Setup(m_Camera);
             m_HeadBob.Setup(m_Camera, m_StepInterval);
             m_StepCycle = 0f;
@@ -122,23 +126,37 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            float speed;
-            GetInput(out speed);
+            GetInput(out float speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
             // get a normal for the surface that is being touched to move along it
-            RaycastHit hitInfo;
-            Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
+            Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out RaycastHit hitInfo,
                                m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
             // calculate camera relative direction to move:
             var m_CamForward = Vector3.Scale(m_Camera.transform.forward, new Vector3(1, 0, 1)).normalized;
             m_MoveDir = desiredMove.z * speed * m_CamForward + desiredMove.x * speed * m_Camera.transform.right;
+            Physics.Raycast(m_Camera.transform.position, Vector3.up, out RaycastHit headSpace, 10, Physics.AllLayers, QueryTriggerInteraction.Ignore);
             if (crouch.ReadValue<float>() > 0)
             {
-                
+                m_IsCrouching = true;
+                m_Camera.transform.position = Vector3.Lerp(m_Camera.transform.position, m_CrouchCameraPosition, Time.deltaTime * 0.001f);
+                m_CharacterController.height = 0.4f;
+                transform.position = new Vector3(transform.position.x, transform.position.y - m_CrouchHeightSeparation, transform.position.z);
+
             }
+            else
+            {
+                if (headSpace.point.y >= (m_Camera.transform.position.y + m_CrouchHeightSeparation))
+                {
+                    m_IsCrouching = false;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + m_CrouchHeightSeparation, transform.position.z);
+                    m_Camera.transform.position = Vector3.Lerp(m_Camera.transform.position, m_OriginalCameraPosition, Time.deltaTime * 0.001f);
+                    m_CharacterController.height = 1.6f;
+                }
+            }
+
 
 
             if (m_CharacterController.isGrounded)
@@ -246,16 +264,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            if (m_IsWalking == true)
+            if (m_IsCrouching == true)
             {
-                if (crouch.ReadValue<float>() > 0)
-                {
-                    speed = m_CrouchSpeed;
-                }
-                else
-                {
-                    speed = m_WalkSpeed;
-                }
+                speed = m_CrouchSpeed;
+            }
+            else if (m_IsWalking == true)
+            {
+                speed = m_WalkSpeed;
             }
             else
             {
