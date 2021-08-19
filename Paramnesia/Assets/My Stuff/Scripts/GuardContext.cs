@@ -28,13 +28,11 @@ public class GuardContext : MonoBehaviour
 
     private Vector3 directionToPlayer;
     private Vector3[] waypoints;
-    private Vector3 searchDirection;
     private Vector3 searchWaypoint;
     private Vector3 targetWaypoint;
     private GameObject targetLeader;
     private NavMeshPath currentPath;
     private Light spotLight;
-    private bool reachedPatrolWaypoint;
     private bool playerVisible;
     private bool targetLeaderAlerted;
     private float searchRadius;
@@ -42,7 +40,6 @@ public class GuardContext : MonoBehaviour
     private float searchSpeed;
     private float chaseSpeed;
     private float angleToPlayer;
-    private float distanceToPlayer;
     private int targetWaypointIndex;
 
     public void Start()
@@ -96,7 +93,6 @@ public class GuardContext : MonoBehaviour
         var rayTarget = new Vector3(player.transform.position.x, player.gameObject.GetComponent<Collider>().bounds.max.y, player.transform.position.z);
         var rayOrigin = guardObject.transform.position;
         directionToPlayer = (rayTarget - rayOrigin).normalized;
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         angleToPlayer = Vector3.Angle(new Vector3(directionToPlayer.x, 0, directionToPlayer.z), transform.forward);
 
         //Draw debug rays to show guard's field of view in editor
@@ -336,7 +332,6 @@ public class GuardContext : MonoBehaviour
         reachedTarget = false;
         currentPath = new NavMeshPath();
         agent.CalculatePath(transform.position, currentPath);
-        searchDirection = Vector3.zero;
 
         switch (guardClass)
         {

@@ -15,21 +15,21 @@ public class StartMenu : MonoBehaviour
     {
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void restartLevel()
+    public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
         Time.timeScale = 1;
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    public void toggleMusic()
+    public void ToggleMusic()
     {
         if (GameObject.FindGameObjectWithTag("GameController").GetComponent<GameMusic>().musicEnabled)
         {

@@ -33,7 +33,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Camera m_Camera;
         private bool m_Jump;
-        private float m_YRotation;
         private Vector2 m_Input;
         private Vector3 m_MoveDir = Vector3.zero;
         private CharacterController m_CharacterController;
@@ -43,7 +42,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_CrouchCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
-        private float m_CrouchHeightSeparation = 1.1f;
+        private readonly float m_CrouchHeightSeparation = 1.1f;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
@@ -94,10 +93,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
-            {
-                
-            }
             m_Jump = jump.ReadValue<float>() > 0;
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {

@@ -4,7 +4,7 @@ using System.Collections;
 using UnityStandardAssets.Characters.ThirdPerson;
 using static UnityStandardAssets.Characters.ThirdPerson.GuardFSM;
 
-public class scr_camera : MonoBehaviour
+public class SecurityCamera : MonoBehaviour
 {
     public GameObject cameraGuard;
     public Transform cameraLight;
@@ -25,7 +25,7 @@ public class scr_camera : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
-        swivel_camera = this.gameObject.transform.Find("Swivel").Find("Angle").transform;
+        swivel_camera = gameObject.transform.Find("Swivel").Find("Angle").transform;
         startRotation = swivel_camera.eulerAngles;
         lastPlayerSighting = Vector3.zero;
         spotLight = GetComponentInChildren<Light>();
@@ -35,6 +35,7 @@ public class scr_camera : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        Debug.Log("Swivelling");
         if (PlayerVisible)
         {
             swivel_camera.LookAt(player);
@@ -62,19 +63,14 @@ public class scr_camera : MonoBehaviour
             new Vector3(player.position.x, player.gameObject.GetComponent<Collider>().bounds.max.y, player.position.z));
         if (Vector3.Distance(player.position, swivel_camera.position) < 10 && angleToPlayer < FOVAngle)
         {
-            if (!Physics.Raycast(rayOrigin, directionToPlayer * distanceToPlayer, out RaycastHit hit, distanceToPlayer, objectMask))
+            if (!Physics.Raycast(rayOrigin, directionToPlayer * distanceToPlayer, out _, distanceToPlayer, objectMask))
             {
                 _ = Vector3.Distance(rayOrigin, rayTarget);
                 //Player spotted, alert camera guard if he is not already alerted
                 PlayerVisible = true;
                 lastPlayerSighting = player.position;
-                if (!cameraGuard.GetComponent<GuardFSM>().alerted)
+                if (!cameraGuard.GetComponent<GuardContext>().alerted)
                 {
-                    //cameraGuard.GetComponent<GuardFSM>().alerted = true;
-                    //cameraGuard.GetComponent<GuardFSM>().currentState = State.SEARCHING;
-                    //cameraGuard.GetComponent<GuardFSM>().reachedTarget = false;
-                    //cameraGuard.GetComponent<AISight>().lastPlayerSighting = GameObject.FindGameObjectWithTag("Player").transform.position;
-
                     cameraGuard.GetComponent<GuardContext>().alerted = true;
                     cameraGuard.GetComponent<GuardContext>().reachedTarget = false;
                     cameraGuard.GetComponent<GuardContext>().lastPlayerSighting = GameObject.FindGameObjectWithTag("Player").transform.position;
