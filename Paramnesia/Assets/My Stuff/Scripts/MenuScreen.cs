@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class MenuScreen : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class MenuScreen : MonoBehaviour
         escape.Enable();
         enter.performed += ctx =>
         {
-            if (pauseMenu.activeSelf)
+            if (pauseMenu.activeSelf == true)
             {
                 pauseMenu.SetActive(false);
                 Time.timeScale = 1;

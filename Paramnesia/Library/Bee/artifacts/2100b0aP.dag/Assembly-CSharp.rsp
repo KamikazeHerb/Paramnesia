@@ -1,0 +1,457 @@
+-target:library
+-out:"Library/Bee/artifacts/2100b0aP.dag/Assembly-CSharp.dll"
+-refout:"Library/Bee/artifacts/2100b0aP.dag/Assembly-CSharp.ref.dll"
+-define:UNITY_2021_1_16
+-define:UNITY_2021_1
+-define:UNITY_2021
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_ANALYTICS
+-define:USE_SEARCH_ENGINE_API
+-define:USE_QUICK_SEARCH_MODULE
+-define:SCENE_TEMPLATE_MODULE
+-define:ENABLE_AR
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_VIRTUALTEXTURING
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_ONSCREEN_KEYBOARD
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_MONO_BDWGC
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_VIDEO
+-define:PLATFORM_WINRT
+-define:PLATFORM_METRO
+-define:UNITY_METRO
+-define:UNITY_METRO_API
+-define:UNITY_WSA
+-define:UNITY_WSA_10_0
+-define:UNITY_WINRT_10_0
+-define:UNITY_WINRT
+-define:ENABLE_MOVIES
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_NETWORK
+-define:UNITY_PLATFORM_THREAD_TO_CORE_MAPPING
+-define:PLATFORM_SUPPORTS_ADS_ID
+-define:CURL_STATICLIB
+-define:PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME
+-define:PLATFORM_IMPLEMENTS_ATTACH_DIALOG
+-define:DISABLE_PLUGIN_LOAD_WRAPPER
+-define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+-define:ENABLE_IL2CPP
+-define:NET_4_6
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
+-define:MOBILE_INPUT
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-define:ENABLE_WINMD_SUPPORT
+-define:WINDOWS_UWP
+-r:"Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll"
+-r:"Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll"
+-r:"Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll"
+-r:"Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll"
+-r:"Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.AI.MachineLearning.MachineLearningContract/3.0.0.0/Windows.AI.MachineLearning.MachineLearningContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract/2.0.0.0/Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Activation.ActivatedEventsContract/1.0.0.0/Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Activation.ActivationCameraSettingsContract/1.0.0.0/Windows.ApplicationModel.Activation.ActivationCameraSettingsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Activation.ContactActivatedEventsContract/1.0.0.0/Windows.ApplicationModel.Activation.ContactActivatedEventsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContract/1.0.0.0/Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract/1.0.0.0/Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Calls.Background.CallsBackgroundContract/2.0.0.0/Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Calls.CallsPhoneContract/5.0.0.0/Windows.ApplicationModel.Calls.CallsPhoneContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Calls.CallsVoipContract/4.0.0.0/Windows.ApplicationModel.Calls.CallsVoipContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Calls.LockScreenCallContract/1.0.0.0/Windows.ApplicationModel.Calls.LockScreenCallContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract/2.0.0.0/Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.FullTrustAppContract/1.0.0.0/Windows.ApplicationModel.FullTrustAppContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceContract/1.0.0.0/Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Preview.Notes.PreviewNotesContract/2.0.0.0/Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Resources.Management.ResourceIndexerContract/2.0.0.0/Windows.ApplicationModel.Resources.Management.ResourceIndexerContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Search.Core.SearchCoreContract/1.0.0.0/Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Search.SearchContract/1.0.0.0/Windows.ApplicationModel.Search.SearchContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.SocialInfo.SocialInfoContract/2.0.0.0/Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.StartupTaskContract/3.0.0.0/Windows.ApplicationModel.StartupTaskContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.ApplicationModel.Wallet.WalletContract/1.0.0.0/Windows.ApplicationModel.Wallet.WalletContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.Custom.CustomDeviceContract/1.0.0.0/Windows.Devices.Custom.CustomDeviceContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.DevicesLowLevelContract/3.0.0.0/Windows.Devices.DevicesLowLevelContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.Portable.PortableDeviceContract/1.0.0.0/Windows.Devices.Portable.PortableDeviceContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.Printers.Extensions.ExtensionsContract/2.0.0.0/Windows.Devices.Printers.Extensions.ExtensionsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.Printers.PrintersContract/1.0.0.0/Windows.Devices.Printers.PrintersContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.Scanners.ScannerDeviceContract/1.0.0.0/Windows.Devices.Scanners.ScannerDeviceContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract/3.0.0.0/Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.SmartCards.SmartCardEmulatorContract/6.0.0.0/Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Devices.Sms.LegacySmsApiContract/1.0.0.0/Windows.Devices.Sms.LegacySmsApiContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Embedded.DeviceLockdown.DeviceLockdownContract/1.0.0.0/Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Foundation.FoundationContract/4.0.0.0/Windows.Foundation.FoundationContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Foundation.UniversalApiContract/10.0.0.0/Windows.Foundation.UniversalApiContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Gaming.Input.GamingInputPreviewContract/1.0.0.0/Windows.Gaming.Input.GamingInputPreviewContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Gaming.Preview.GamesEnumerationContract/2.0.0.0/Windows.Gaming.Preview.GamesEnumerationContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Gaming.UI.GameChatOverlayContract/1.0.0.0/Windows.Gaming.UI.GameChatOverlayContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Gaming.UI.GamingUIProviderContract/1.0.0.0/Windows.Gaming.UI.GamingUIProviderContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Gaming.XboxLive.StorageApiContract/1.0.0.0/Windows.Gaming.XboxLive.StorageApiContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract/1.0.0.0/Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Graphics.Printing3D.Printing3DContract/4.0.0.0/Windows.Graphics.Printing3D.Printing3DContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Management.Deployment.Preview.DeploymentPreviewContract/1.0.0.0/Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Management.Workplace.WorkplaceSettingsContract/1.0.0.0/Windows.Management.Workplace.WorkplaceSettingsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.AppBroadcasting.AppBroadcastingContract/1.0.0.0/Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.AppRecording.AppRecordingContract/1.0.0.0/Windows.Media.AppRecording.AppRecordingContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Capture.AppBroadcastContract/2.0.0.0/Windows.Media.Capture.AppBroadcastContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Capture.AppCaptureContract/4.0.0.0/Windows.Media.Capture.AppCaptureContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Capture.AppCaptureMetadataContract/1.0.0.0/Windows.Media.Capture.AppCaptureMetadataContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Capture.CameraCaptureUIContract/1.0.0.0/Windows.Media.Capture.CameraCaptureUIContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Capture.GameBarContract/1.0.0.0/Windows.Media.Capture.GameBarContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Devices.CallControlContract/1.0.0.0/Windows.Media.Devices.CallControlContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.MediaControlContract/1.0.0.0/Windows.Media.MediaControlContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Playlists.PlaylistsContract/1.0.0.0/Windows.Media.Playlists.PlaylistsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Media.Protection.ProtectionRenewalContract/1.0.0.0/Windows.Media.Protection.ProtectionRenewalContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Networking.Connectivity.WwanContract/2.0.0.0/Windows.Networking.Connectivity.WwanContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract/1.0.0.0/Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract/1.0.0.0/Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Networking.Sockets.ControlChannelTriggerContract/3.0.0.0/Windows.Networking.Sockets.ControlChannelTriggerContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Networking.XboxLive.XboxLiveSecureSocketsContract/1.0.0.0/Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Perception.Automation.Core.PerceptionAutomationCoreContract/1.0.0.0/Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Phone.PhoneContract/1.0.0.0/Windows.Phone.PhoneContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Phone.StartScreen.DualSimTileContract/1.0.0.0/Windows.Phone.StartScreen.DualSimTileContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Security.EnterpriseData.EnterpriseDataContract/5.0.0.0/Windows.Security.EnterpriseData.EnterpriseDataContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Security.ExchangeActiveSyncProvisioning.EasContract/1.0.0.0/Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Security.Isolation.IsolatedWindowsEnvironmentContract/2.0.0.0/Windows.Security.Isolation.IsolatedWindowsEnvironmentContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Services.Maps.GuidanceContract/3.0.0.0/Windows.Services.Maps.GuidanceContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Services.Maps.LocalSearchContract/4.0.0.0/Windows.Services.Maps.LocalSearchContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Services.Store.StoreContract/4.0.0.0/Windows.Services.Store.StoreContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Services.TargetedContent.TargetedContentContract/1.0.0.0/Windows.Services.TargetedContent.TargetedContentContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Storage.Provider.CloudFilesContract/4.0.0.0/Windows.Storage.Provider.CloudFilesContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.Profile.ProfileHardwareTokenContract/1.0.0.0/Windows.System.Profile.ProfileHardwareTokenContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.Profile.ProfileRetailInfoContract/1.0.0.0/Windows.System.Profile.ProfileRetailInfoContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.Profile.ProfileSharedModeContract/2.0.0.0/Windows.System.Profile.ProfileSharedModeContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.Profile.SystemManufacturers.SystemManufacturersContract/3.0.0.0/Windows.System.Profile.SystemManufacturers.SystemManufacturersContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.SystemManagementContract/7.0.0.0/Windows.System.SystemManagementContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.UserProfile.UserProfileContract/2.0.0.0/Windows.System.UserProfile.UserProfileContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.System.UserProfile.UserProfileLockScreenContract/1.0.0.0/Windows.System.UserProfile.UserProfileLockScreenContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.ApplicationSettings.ApplicationsSettingsContract/1.0.0.0/Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.Core.AnimationMetrics.AnimationMetricsContract/1.0.0.0/Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.Core.CoreWindowDialogsContract/1.0.0.0/Windows.UI.Core.CoreWindowDialogsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.Core.Preview.Communications.PreviewCommunicationsContract/1.0.0.0/Windows.UI.Core.Preview.Communications.PreviewCommunicationsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.Shell.SecurityAppManagerContract/1.0.0.0/Windows.UI.Shell.SecurityAppManagerContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.ViewManagement.ViewManagementViewScalingContract/1.0.0.0/Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.WebUI.Core.WebUICommandBarContract/1.0.0.0/Windows.UI.WebUI.Core.WebUICommandBarContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.Xaml.Core.Direct.XamlDirectContract/2.0.0.0/Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.UI.Xaml.Hosting.HostingContract/4.0.0.0/Windows.UI.Xaml.Hosting.HostingContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/References/10.0.19041.0/Windows.Web.Http.Diagnostics.HttpDiagnosticsContract/2.0.0.0/Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/UnionMetadata/10.0.19041.0/Facade/Windows.winmd"
+-r:"C:/Program Files (x86)/Windows Kits/10/UnionMetadata/10.0.19041.0/Facade/Windows.winmd"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/il2cpp/BCLExtensions/System.Runtime.WindowsRuntime.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/il2cpp/BCLExtensions/System.Runtime.WindowsRuntime.UI.Xaml.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.IO.Compression.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.AccessibilityModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.AIModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.AndroidJNIModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.AnimationModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.ARModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.AssetBundleModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.AudioModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.ClothModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.CoreModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.CrashReportingModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.DirectorModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.DSPGraphModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.GameCenterModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.GIModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.GridModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.HotReloadModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.ImageConversionModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.IMGUIModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.InputLegacyModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.InputModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.JSONSerializeModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.LocalizationModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.ParticleSystemModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.PerformanceReportingModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.Physics2DModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.PhysicsModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.ProfilerModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.ScreenCaptureModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.SharedInternalsModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.SpriteMaskModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.SpriteShapeModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.StreamingModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.SubstanceModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.SubsystemsModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.TerrainModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.TerrainPhysicsModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.TextCoreModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.TextRenderingModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.TilemapModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.TLSModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UIElementsModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UIElementsNativeModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UIModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UmbraModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UNETModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityAnalyticsModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityConnectModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityCurlModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityTestProtocolModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityWebRequestModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.VehiclesModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.VFXModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.VideoModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.VirtualTexturingModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.VRModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.WindModule.dll"
+-r:"C:/Program Files/Unity/Hub/2021.1.16f1/Editor/Data/PlaybackEngines/MetroSupport/Managed/il2cpp/UnityEngine.XRModule.dll"
+-r:"C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll"
+-r:"C:/Users/Patrick/Documents/Game Dev/Paramnesia/Paramnesia/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/Assembly-CSharp-firstpass.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/com.unity.multiplayer-hlapi.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/Unity.Analytics.DataPrivacy.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/Unity.InputSystem.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/Unity.TextMeshPro.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/Unity.Timeline.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/UnityEngine.SpatialTracking.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/UnityEngine.UI.ref.dll"
+-r:"Library/Bee/artifacts/2100b0aP.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/Aivo Behaviour Tree/src/ActionNode.cs"
+"Assets/Aivo Behaviour Tree/src/AivoTreeStatus.cs"
+"Assets/Aivo Behaviour Tree/src/InverterNode.cs"
+"Assets/Aivo Behaviour Tree/src/SelectorNode.cs"
+"Assets/Aivo Behaviour Tree/src/SequenceNode.cs"
+"Assets/Aivo Behaviour Tree/src/TreeNode.cs"
+"Assets/Aivo Behaviour Tree/src/Weighted.cs"
+"Assets/Aivo Behaviour Tree/test/Example.cs"
+"Assets/Aivo Behaviour Tree/test/Properties/AssemblyInfo.cs"
+"Assets/Fluent Behaviour Tree/BehaviourTreeBuilder.cs"
+"Assets/Fluent Behaviour Tree/BehaviourTreeStatus.cs"
+"Assets/Fluent Behaviour Tree/IBehaviourTreeNode.cs"
+"Assets/Fluent Behaviour Tree/IParentBehaviourTreeNode.cs"
+"Assets/Fluent Behaviour Tree/Nodes/ActionNode.cs"
+"Assets/Fluent Behaviour Tree/Nodes/InverterNode.cs"
+"Assets/Fluent Behaviour Tree/Nodes/ParallelNode.cs"
+"Assets/Fluent Behaviour Tree/Nodes/SelectorNode.cs"
+"Assets/Fluent Behaviour Tree/Nodes/SequenceNode.cs"
+"Assets/Fluent Behaviour Tree/TimeData.cs"
+"Assets/My Stuff/Scripts/AISight.cs"
+"Assets/My Stuff/Scripts/BehaviourTree.cs"
+"Assets/My Stuff/Scripts/CharacterAudio.cs"
+"Assets/My Stuff/Scripts/Controls.cs"
+"Assets/My Stuff/Scripts/CrouchIcon.cs"
+"Assets/My Stuff/Scripts/FirstPersonCharacter.cs"
+"Assets/My Stuff/Scripts/FirstPersonMovement.cs"
+"Assets/My Stuff/Scripts/FirstPersonUserControl.cs"
+"Assets/My Stuff/Scripts/FPCamera.cs"
+"Assets/My Stuff/Scripts/GameMusic.cs"
+"Assets/My Stuff/Scripts/GameObjective.cs"
+"Assets/My Stuff/Scripts/GuardContext.cs"
+"Assets/My Stuff/Scripts/GuardFSM.cs"
+"Assets/My Stuff/Scripts/MenuScreen.cs"
+"Assets/My Stuff/Scripts/OpenableDoor.cs"
+"Assets/My Stuff/Scripts/StartMenu.cs"
+"Assets/NavMeshComponents/Scripts/NavMeshLink.cs"
+"Assets/NavMeshComponents/Scripts/NavMeshModifier.cs"
+"Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"
+"Assets/NavMeshComponents/Scripts/NavMeshSurface.cs"
+"Assets/ProCore/ProBuilder/API Examples/Icosphere FFT/Scripts/CameraControls.cs"
+"Assets/ProCore/ProBuilder/API Examples/Icosphere FFT/Scripts/IcoBumpin.cs"
+"Assets/ProCore/ProBuilder/API Examples/Misc/HueCube.cs"
+"Assets/ProCore/ProBuilder/API Examples/Procedural Mesh/ExtrudeRandomEdges.cs"
+"Assets/ProCore/ProBuilder/API Examples/Runtime Editing/RuntimeEdit.cs"
+"Assets/ProCore/ProBuilder/API Examples/Vertex Colors/HighlightNearestFace.cs"
+"Assets/RDL/Security_Pack/Scripts/SecurityCamera.cs"
+"Assets/SampleScenes/Menu/Scripts/MenuSceneLoader.cs"
+"Assets/SampleScenes/Menu/Scripts/PauseMenu.cs"
+"Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs"
+"Assets/SampleScenes/Scripts/CameraSwitch.cs"
+"Assets/SampleScenes/Scripts/LevelReset.cs"
+"Assets/SampleScenes/Scripts/ParticleSceneControls.cs"
+"Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs"
+"Assets/SampleScenes/Scripts/SlowMoButton.cs"
+-langversion:8.0
+
+/deterministic
+/optimize+
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+
+/nowarn:0169
+/nowarn:0649
+/utf8output
+/preferreduilang:en-US

@@ -22,8 +22,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Quaternion m_CameraTargetRot;
         private bool m_cursorIsLocked = true;
 
-        private InputAction leftClick;
-        private InputAction esc;
+        private readonly InputAction mouseLookX = new InputAction(type: InputActionType.Value,binding: "<Mouse>/delta/x");
+        private readonly InputAction mouseLookY = new InputAction(type: InputActionType.Value, binding: "<Mouse>/delta/y");
+        private readonly InputAction leftClick = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton");
+        private readonly InputAction esc = new InputAction(type: InputActionType.Button, binding: "<keyboard>/esc");
 
 
         public void Init(Transform character, Transform camera)
@@ -31,19 +33,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CharacterTargetRot = character.localRotation;
             m_CameraTargetRot = camera.localRotation;
 
-            leftClick = new InputAction(type: InputActionType.Button, binding: "<Mouse>/leftButton", interactions: "");
-            esc = new InputAction(type: InputActionType.Button, binding: "<keyboard>/esc", interactions: "");
-
             leftClick.Enable();
             esc.Enable();
+            mouseLookX.Enable();
+            mouseLookY.Enable();
         }
 
 
         public void LookRotation(Transform character, Transform camera)
         {
-            float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
-            float xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * YSensitivity;
-
+            float yRot = CrossPlatformInputManager.GetAxis("Mouse Y") * XSensitivity;
+            float xRot = CrossPlatformInputManager.GetAxis("Mouse X") * YSensitivity;
             m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
             m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
 

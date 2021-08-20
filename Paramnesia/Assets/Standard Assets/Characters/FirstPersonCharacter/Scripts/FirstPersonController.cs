@@ -54,6 +54,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private InputAction sprint;
         private InputAction jump;
 
+        private Component MenuScreen;
+
         // Use this for initialization
         private void Start()
         {
