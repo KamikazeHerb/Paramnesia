@@ -74,7 +74,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             //Configure input action
             
-
             moveLeft.Enable();
             moveRight.Enable();
             moveForward.Enable();
@@ -82,6 +81,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             crouch.Enable();
             sprint.Enable();
             jump.Enable();
+
+            jump.started += ctx =>
+            {
+                m_Jump = true;
+            };
         }
 
 
@@ -91,8 +95,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (PauseMenu.activeSelf == false)
             {
                 RotateView();
-                // the jump state needs to read here to make sure it is not missed
-                m_Jump = jump.ReadValue<float>() > 0;
                 if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
                 {
                     StartCoroutine(m_JumpBob.DoBobCycle());
@@ -104,7 +106,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_MoveDir.y = 0f;
                 }
-
                 m_PreviouslyGrounded = m_CharacterController.isGrounded;
             }
             else

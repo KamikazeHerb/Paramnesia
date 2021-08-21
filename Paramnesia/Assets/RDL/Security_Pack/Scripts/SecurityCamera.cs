@@ -35,7 +35,6 @@ public class SecurityCamera : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log("Swivelling");
         if (PlayerVisible)
         {
             swivel_camera.LookAt(player);
