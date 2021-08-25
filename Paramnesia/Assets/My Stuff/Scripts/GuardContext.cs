@@ -193,6 +193,7 @@ public class GuardContext : MonoBehaviour
             StopMoving();
             //Find a random location within a given radius of a given position, and if it is a 
             //valid walkable location on the navmesh then set it as the search waypoint
+            //TODO: This needs updating to make search location more logical
             var searchLocation = UnityEngine.Random.insideUnitSphere * radius;
             searchLocation += location;
             if (NavMesh.SamplePosition(searchLocation, out NavMeshHit hit, radius, 1))
