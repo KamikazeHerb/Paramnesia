@@ -44,11 +44,11 @@ public class GameMusic : MonoBehaviour
         if (chase)
         {
             sneakTheme.volume = Mathf.Lerp(GetComponent<AudioSource>().volume, 0f, musicFadeSpeed * Time.deltaTime);
-            chaseTheme.volume = Mathf.Lerp(chaseTheme.volume, 0.005f, musicFadeSpeed * Time.deltaTime);
+            chaseTheme.volume = Mathf.Lerp(chaseTheme.volume, 0.05f, musicFadeSpeed * Time.deltaTime);
         }
         else
         {
-            sneakTheme.volume = Mathf.Lerp(GetComponent<AudioSource>().volume, 0.005f, musicFadeSpeed * Time.deltaTime);
+            sneakTheme.volume = Mathf.Lerp(GetComponent<AudioSource>().volume, 0.05f, musicFadeSpeed * Time.deltaTime);
             chaseTheme.volume = Mathf.Lerp(chaseTheme.volume, 0f, musicFadeSpeed * Time.deltaTime);
         }
     }

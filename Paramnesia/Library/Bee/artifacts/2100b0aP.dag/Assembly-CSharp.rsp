@@ -98,6 +98,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_INPUT_SYSTEM
+-define:ENABLE_LEGACY_INPUT_MANAGER
 -define:MOBILE_INPUT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -412,9 +413,8 @@
 "Assets/My Stuff/Scripts/BehaviourTree.cs"
 "Assets/My Stuff/Scripts/CharacterAudio.cs"
 "Assets/My Stuff/Scripts/Controls.cs"
-"Assets/My Stuff/Scripts/CrouchIcon.cs"
 "Assets/My Stuff/Scripts/FirstPersonCharacter.cs"
-"Assets/My Stuff/Scripts/FirstPersonMovement.cs"
+"Assets/My Stuff/Scripts/FirstPersonController.cs"
 "Assets/My Stuff/Scripts/FirstPersonUserControl.cs"
 "Assets/My Stuff/Scripts/FPCamera.cs"
 "Assets/My Stuff/Scripts/GameMusic.cs"
@@ -424,6 +424,7 @@
 "Assets/My Stuff/Scripts/MenuScreen.cs"
 "Assets/My Stuff/Scripts/OpenableDoor.cs"
 "Assets/My Stuff/Scripts/StartMenu.cs"
+"Assets/My Stuff/StartGameButton.cs"
 "Assets/NavMeshComponents/Scripts/NavMeshLink.cs"
 "Assets/NavMeshComponents/Scripts/NavMeshModifier.cs"
 "Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"

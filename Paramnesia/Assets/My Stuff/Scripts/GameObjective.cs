@@ -12,7 +12,7 @@ public class GameObjective : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == ("Player"))
+        if (other.gameObject.CompareTag(("Player")))
         {
             WinUI.SetActive(true);
             Time.timeScale = 0;

@@ -25,6 +25,7 @@
 -define:UNITY_2020_3_OR_NEWER
 -define:UNITY_2021_1_OR_NEWER
 -define:UNITY_INCLUDE_TESTS
+-define:UNITY_ANALYTICS
 -define:USE_SEARCH_ENGINE_API
 -define:USE_QUICK_SEARCH_MODULE
 -define:SCENE_TEMPLATE_MODULE
@@ -108,6 +109,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_INPUT_SYSTEM
+-define:ENABLE_LEGACY_INPUT_MANAGER
 -define:MOBILE_INPUT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -357,7 +359,6 @@
 "Assets/My Stuff/Scripts/BehaviourTree.cs"
 "Assets/My Stuff/Scripts/CharacterAudio.cs"
 "Assets/My Stuff/Scripts/Controls.cs"
-"Assets/My Stuff/Scripts/CrouchIcon.cs"
 "Assets/My Stuff/Scripts/FirstPersonCharacter.cs"
 "Assets/My Stuff/Scripts/FirstPersonController.cs"
 "Assets/My Stuff/Scripts/FirstPersonUserControl.cs"
@@ -366,9 +367,10 @@
 "Assets/My Stuff/Scripts/GameObjective.cs"
 "Assets/My Stuff/Scripts/GuardContext.cs"
 "Assets/My Stuff/Scripts/GuardFSM.cs"
+"Assets/My Stuff/Scripts/LevelComplete.cs"
+"Assets/My Stuff/Scripts/MainMenu.cs"
 "Assets/My Stuff/Scripts/MenuScreen.cs"
 "Assets/My Stuff/Scripts/OpenableDoor.cs"
-"Assets/My Stuff/Scripts/StartMenu.cs"
 "Assets/NavMeshComponents/Scripts/NavMeshLink.cs"
 "Assets/NavMeshComponents/Scripts/NavMeshModifier.cs"
 "Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"
