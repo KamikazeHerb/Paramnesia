@@ -9,11 +9,11 @@ ScriptsOnlyBuild:
     - GameMusic
     - GameObjective
     - GuardContext
+    - InGameMenu
+    - MainMenu
     - MenuScreen
     - OpenableDoor
     - SecurityCamera
-    - StartGameButton
-    - StartMenu
     - UnityEngine.AI.NavMeshModifier
     - UnityEngine.AI.NavMeshModifierVolume
     - UnityEngine.AI.NavMeshSurface
@@ -49,7 +49,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
@@ -92,6 +91,8 @@ ScriptsOnlyBuild:
     - Class: 83
       Script: {instanceID: 0}
     - Class: 84
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -202,7 +203,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -210,8 +213,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1596}
     - Class: 114
       Script: {instanceID: 1598}
-    - Class: 114
-      Script: {instanceID: 1604}
     - Class: 114
       Script: {instanceID: 2798}
     - Class: 114
@@ -222,6 +223,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3192}
     - Class: 114
       Script: {instanceID: 3592}
+    - Class: 114
+      Script: {instanceID: 3954}
+    - Class: 114
+      Script: {instanceID: 4530}
+    - Class: 114
+      Script: {instanceID: 4920}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -703,10 +710,10 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: edb359c7bcabe5e7ea8ca99a81f59bc8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: StartGameButton
+    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: 718ef0ded913ba15da8a97ccf24793ce
@@ -1558,7 +1565,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: StartMenu
+    className: InGameMenu
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
