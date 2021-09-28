@@ -73,3 +73,5 @@ crashlytics-build.properties
 
 /[Ll]ibrary/[Uu]WP/[Xx]64/[Rr]elease/[Ii]l2cpp_cache/*
 /[Ll]ibrary/[Ii]l2cppBuildCache/*
+/Library/UWP/x64/Release/il2cpp_cache/*
+/Library/il2cpp_cache/*

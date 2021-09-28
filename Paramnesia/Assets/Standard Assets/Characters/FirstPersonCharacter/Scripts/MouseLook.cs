@@ -97,8 +97,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (m_cursorIsLocked)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                //Only lock cursor when game is not paused (this prevents locked cursor in menu screens)
+                if (Time.timeScale > 0)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
             }
             else if (!m_cursorIsLocked)
             {
